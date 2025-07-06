@@ -89,7 +89,9 @@ if prompt := st.chat_input("Type your message here..."):
     )
 
     run = openai.beta.threads.runs.create(
-        thread_id=st.session_state.thread_id,
+    thread_id=st.session_state.thread_id,
+    assistant_id=assistant_id
+    
     )
 
     # Wait for assistant
