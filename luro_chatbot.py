@@ -58,8 +58,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
  
 # Set your OpenAI key using Streamlit secrets
-openai.api_key = st.secrets["openai_api_key"]
-ASSISTANT_ID = st.secrets["assistant_id"]
+import os
+openai.api_key = os.environ["OPENAI_API_KEY"]
+assistant_id = os.environ["ASSISTANT_ID"]
 
 # Setup session state
 if "thread_id" not in st.session_state:
